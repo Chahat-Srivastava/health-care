@@ -7,6 +7,7 @@ import GeneralDiseasePrediction from './pages/GeneralDiseasePrediction';
 import ChronicDiseasePrediction from './pages/ChronicDiseasePrediction';
 import DoctorNearMe from './pages/DoctorNearMe';
 import FeaturesNav from './pages/FeaturesNav';
+import Homepage from './pages/Homepage';
 import { UserContext } from './context/UserContext';
 
 const App = () => {
@@ -36,6 +37,8 @@ const App = () => {
           />
           
           <Route path="/features/doctor-near-me" element={<DoctorNearMe />} />
+          <Route path="/Homepage" element={<Homepage />} />
+
           
           {/* Default fallback */}
           <Route path="*" element={<Navigate to="/" />} />

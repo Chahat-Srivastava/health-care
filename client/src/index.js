@@ -5,6 +5,9 @@ import 'bulma/css/bulma.min.css';
 import { UserProvider } from './context/UserContext'; // Assuming you have UserContext for user state management
 import './index.css'; // Optional: Import your CSS file
 
+
+
+
 // Create a root container
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
