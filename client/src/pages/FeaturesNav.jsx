@@ -12,9 +12,9 @@ const FeaturesNav = () => {
   };
 
   return (
-    <nav className="navbar is-info">
+    <nav className="navbar is-light" > 
       <div className="navbar-brand">
-        <h2 className="navbar-item has-text-white">Features</h2>
+        <h2 className="navbar-item ">MedPathway</h2>
       </div>
       <div className="navbar-menu">
         <div className="navbar-start">

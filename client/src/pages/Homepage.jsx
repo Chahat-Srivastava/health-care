@@ -10,7 +10,7 @@ const Homepage = () => {
           <section class="hero is-royal-blue">
                 <div class="hero-body">
                   <div class="container">
-                   
+                   <br/>
                     <div class="columns">
                     <div class="column is-half">
                         <figure class="image is-4by3">

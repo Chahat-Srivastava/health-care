@@ -25,7 +25,7 @@ const Register = () => {
 
   return (
     <div className="box" style={{ width: '400px', margin: '0 auto' }}>
-      <h2 className="title has-text-info">Register</h2>
+      <h2 className="title has-text-info ">Register</h2>
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Name</label>
