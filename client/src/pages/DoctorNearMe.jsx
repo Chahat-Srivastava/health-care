@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import '../style/doctornearme.css'
+import image1 from './assets/image1.png';
+import Rectangle8 from './assets/Rectangle8.png';
+
 const apiKey = 'S7A-KlzAW3rU8ZBTRMo6BxnKP40l8-HRcMwBEWk3GVo'; // Replace with your actual API key
 const DoctorNearMe = () => {
   const [hospitals, setHospitals] = useState([]);
@@ -77,73 +81,46 @@ const DoctorNearMe = () => {
       <br/>
       <br/>
       <br/>
-      <div class="columns is-multiline is-vcentered">
-      {isLocating && <p>Locating your position...</p>}
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-      {hospitals.length > 0 && (
-        <ul>
-          {hospitals.map((hospital) => (
-            <div class="column is-one-half"><li key={hospital.id} className="hospital">
-              <h2>{hospital.title}</h2>
-              {hospital.address && <p>{hospital.address.label}</p>}
-              {hospital.phone && <p>Phone: {hospital.phone}</p>}
-              {hospital.href && <a href={hospital.href}>Contact Hospital</a>}
-            </li>
-            </div>
-          ))}
-        </ul>
-      )}
-      <div class="column is-one-half">
-      <button class="button is-info is-inverted" onClick={dialEmergency}>Call Emergency Services</button>
-      </div>
+      <div class="container">
+                         <br/>
+                          <div class="columns">
+                          <div class="column is-half">
+                              <figure class="image is-4by3">
+                              <img src={image1} alt="Woman with a stethoscope" /> 
+                              
+                              </figure>
+                              <img src={Rectangle8} alt="" />
+                              <button class="button is-info is-inverted" onClick={getLocation} disabled={isLocating}>
+                                {isLocating ? 'Locating...' : 'Find Hospitals Near Me'}
+                              </button> 
+
+                              <button class="button is-info is-inverted" onClick={dialEmergency}>Call Emergency Services</button>
+                            </div>
+                            <div class="columns is-multiline is-vcentered">
+        
+                              {isLocating && <p>Locating your position...</p>}
+                              {errorMessage && <p className="error-message">{errorMessage}</p>}
+                              {hospitals.length > 0 && (
+                                <ul>
+                                  {hospitals.map((hospital) => (
+                                    <div class="column is-one-half"><li key={hospital.id} className="hospital">
+                                      <h1>{hospital.title}</h1>
+                                      {hospital.address && <p>{hospital.address.label}</p>}
+                                      {hospital.phone && <p>Phone: {hospital.phone}</p>}
+                                      {hospital.href && <a href={hospital.href}>Contact Hospital</a>}
+                                    </li>
+                                    </div>
+                                  ))}
+                                </ul>
+                              )}
+  
+                            </div>
+                           
+                    </div>
+                  
+    </div>
+     
       
-      <button class="button is-info is-inverted" onClick={getLocation} disabled={isLocating}>
-        {isLocating ? 'Locating...' : 'Find Hospitals Near Me'}
-      </button> 
-        {/* <div class="column is-one-half"> 
-           <a href="#" class="button  is-fullwidth">
-            <div class="box has-text-centered">
-              <figure class="image is-128x128"> 
-                <img src="https://i.pinimg.com/736x/5b/a1/a3/5ba1a398ac0aa7fe01480166fd2b818f.jpg" alt="Breast Cancer" /> 
-              </figure>
-              <p>Dr. Ankur Sen</p>
-            </div>
-          </a> 
-        </div>
-
-        <div class="column is-one-half"> 
-          <a href="#" class="button is-fullwidth">
-            <div class="box has-text-centered">
-              <figure class="image is-128x128">
-                <img src="https://png.pngtree.com/png-vector/20230928/ourmid/pngtree-young-afro-professional-doctor-png-image_10148632.png" alt="Diabetes" />
-              </figure>
-              <p>Dr. Ahmad Khan</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="column is-one-half"> 
-          <a href="#" class="button is-fullwidth">
-            <div class="box has-text-centered">
-              <figure class="image is-128x128">
-                <img src="https://png.pngtree.com/png-clipart/20230918/ourmid/pngtree-photo-men-doctor-physician-chest-smiling-png-image_10132895.png" alt="Kidney" /> */}
-              {/* </figure>
-              <p>Dr. Ravi Sen</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="column is-one-half"> 
-          <a href="#" class="button is-fullwidth">
-            <div class="box has-text-centered">
-              <figure class="image is-128x128">
-                <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsb2ZmaWNlMV9waG90b2dyYXBoeV9vZl9hbl9zb3V0aF9pbmRpYW5fd29tZW5fYXNfYV9kb2N0b19kMzAxMDM3Zi03MDUzLTQxNDAtYmYyZS1lZDFlYWE0YTM3NDRfMS5qcGc.jpg" alt="Parkinson's" />
-              </figure>
-              <p>Dr. Heena</p>
-            </div>
-          </a>
-        </div> */}
-      </div>
     </div>
   </section>
 </div>
