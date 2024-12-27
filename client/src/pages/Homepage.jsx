@@ -2,8 +2,7 @@ import React from 'react';
 import '../style/homepage.css'
 import image1 from './assets/image1.png';
 import Rectangle8 from './assets/Rectangle8.png';
-
-
+import { Link} from 'react-router-dom';
 const Homepage = () => {
   return (
     <div>
@@ -24,7 +23,7 @@ const Homepage = () => {
                         <br/>
                         <h2 class="subtitle has-text-white">We offer tools for managing general health, predicting chronic conditions, and finding nearby hospitals. Our platform provides personalized workout and diet plans to help you stay fit and healthy.</h2>
                         
-                        <a class="button is-large is-my-custom-blue " href="client\src\pages\Home.jsx">Log In</a> 
+                        <button class="button is-large is-my-custom-blue"><Link to='/homepage'>Log In</Link></button> 
                       </div>
                      
                     </div>

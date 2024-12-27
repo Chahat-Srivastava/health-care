@@ -8,11 +8,16 @@ import ChronicDiseasePrediction from './pages/ChronicDiseasePrediction';
 import DoctorNearMe from './pages/DoctorNearMe';
 import FeaturesNav from './pages/FeaturesNav';
 import Homepage from './pages/Homepage';
+import HereMap from './pages/HereMap';
+
+
 import { UserContext } from './context/UserContext';
 
 const App = () => {
   const { user } = useContext(UserContext);
+  const handleResults = (results) => console.log('Fetched Address:', results);
 
+  const handleError = (type, status) => console.log('Error:', type, status);
   return (
     <Router>
       <div>
@@ -21,8 +26,8 @@ const App = () => {
 
         <Routes>
           {/* Home Page Route */}
-          <Route path="/" element={<Home />} />
-          
+          <Route path="/" element={<Homepage />} />
+          <Route path="/homepage" element={<Home/>}/>
           {/* Login and Register Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
@@ -37,6 +42,8 @@ const App = () => {
           />
           
           <Route path="/features/doctor-near-me" element={<DoctorNearMe />} />
+          <Route path="/features/here-map" element={<HereMap onFetchAddress={handleResults} onError={handleError} />} />
+
           <Route path="/Homepage" element={<Homepage />} />
 
           

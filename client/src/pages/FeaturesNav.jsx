@@ -22,8 +22,10 @@ const FeaturesNav = () => {
           {user && user.role === 'doctor' && (
             <Link className="navbar-item" to="/features/chronic-disease-prediction">Chronic Disease Prediction</Link>
           )}
+          {user && user.role === 'patient' && (
           <Link className="navbar-item" to="/features/doctor-near-me">Doctor Near Me</Link>
-        </div>
+          )}
+          </div>
         <div className="navbar-end">
           {user ? ( // Conditionally render logout option if user is logged in
             <div className="navbar-item">
