@@ -5,6 +5,9 @@ import Login from './pages/Login';
 import Register from './pages/Register'; // Import Register component
 import GeneralDiseasePrediction from './pages/GeneralDiseasePrediction';
 import ChronicDiseasePrediction from './pages/ChronicDiseasePrediction';
+import KidneyChronicForm from './pages/KidneyChronicForm';
+import DiabetesForm from './pages/DiabetesForm'; 
+import ParkinsonForm from './pages/ParkinsonForm'; 
 import DoctorNearMe from './pages/DoctorNearMe';
 import FeaturesNav from './pages/FeaturesNav';
 import Homepage from './pages/Homepage';
@@ -40,7 +43,10 @@ const App = () => {
             path="/features/chronic-disease-prediction" 
             element={user && user.role === 'doctor' ? <ChronicDiseasePrediction /> : <Navigate to="/features/general-disease-prediction" />} 
           />
-          
+          <Route path="/features/chronic-disease-prediction/kidney" element={<KidneyChronicForm />} />
+          <Route path="/features/chronic-disease-prediction/parkinson" element={<ParkinsonForm />} />
+          <Route path="/features/chronic-disease-prediction/diabetes" element={<DiabetesForm />} />
+
           <Route path="/features/doctor-near-me" element={<DoctorNearMe />} />
           <Route path="/features/here-map" element={<HereMap onFetchAddress={handleResults} onError={handleError} />} />
 
