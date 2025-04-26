@@ -22,6 +22,7 @@ const Login = () => {
       // Set user information in context
       setUser(user);
 
+
       // Redirect to the features page after login
       navigate('/features/general-disease-prediction'); // Use navigate instead of history.push
     } catch (error) {
